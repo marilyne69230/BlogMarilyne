@@ -8,5 +8,7 @@
     -   cd blogMarilyne
     -   symfony console doctrine:database:create
 
+    *** DEPOT GIT ***
+    - 
 
  -->
