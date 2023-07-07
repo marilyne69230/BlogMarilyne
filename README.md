@@ -21,3 +21,18 @@
     - User (nom de l'entity)
     - symfony console make:migration (prepare la migration)
     - symfony console doctrine:migration:migrate (migration vers la BDD)
+
+    *** RELATION ENTRE LES CLASS ***
+    - symfony console make:entity 
+    - nom de la class concernée
+    - nom de la nouvelle propriété
+    - relation
+    - OneToMany
+    - nom class avec qui la relation
+
+    *** CREATION CONTROLLER ***
+    - symfony console make:controller
+    - nom du controller (on va créer 2 controller 1 LoginController 2 HomeController)
+
+    *** CREATION FORMULAIRE ***
+    - 
