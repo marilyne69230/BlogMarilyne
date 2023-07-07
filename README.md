@@ -1,4 +1,4 @@
-<!-- 
+
     *** COMMANDES ***
 
     -   composer create-project symfony/website-skeleton secondProject "5.4.*”
@@ -9,6 +9,5 @@
     -   symfony console doctrine:database:create
 
     *** DEPOT GIT ***
-    - 
+    -
 
- -->
