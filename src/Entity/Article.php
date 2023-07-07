@@ -25,13 +25,12 @@ class Article
     #[ORM\OneToMany(mappedBy: 'article', targetEntity: Comment::class)]
     private Collection $comments;
 
-    #[ORM\OneToMany(mappedBy: 'article', targetEntity: User::class)]
-    private Collection $users;
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?User $user = null;
 
     public function __construct()
     {
         $this->comments = new ArrayCollection();
-        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -93,32 +92,14 @@ class Article
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsers(): Collection
+    public function getUser(): ?User
     {
-        return $this->users;
+        return $this->user;
     }
 
-    public function addUser(User $user): static
+    public function setUser(?User $user): static
     {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->setArticle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getArticle() === $this) {
-                $user->setArticle(null);
-            }
-        }
+        $this->user = $user;
 
         return $this;
     }
